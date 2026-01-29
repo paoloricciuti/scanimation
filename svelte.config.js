@@ -1,6 +1,9 @@
-import adapter from '@sveltejs/adapter-vercel';
+import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
-const config = { kit: { adapter: adapter() }, compilerOptions: { experimental: { async: true } } };
+const config = {
+	kit: { adapter: adapter() },
+	compilerOptions: { experimental: { async: true } }
+};
 
 export default config;
