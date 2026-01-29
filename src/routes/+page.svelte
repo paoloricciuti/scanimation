@@ -111,18 +111,6 @@
 				images = Object.values(example) as string[];
 			}}>or try an example</button
 		>
-
-		<div class="slider-control">
-			<div class="slider-header">
-				<span class="slider-label">Strip width</span>
-				<span class="slider-value">{column_size}px</span>
-			</div>
-			<input type="range" bind:value={column_size} min="1" max="10" class="styled-range" />
-			<div class="slider-ticks">
-				<span>1</span>
-				<span>10</span>
-			</div>
-		</div>
 	</section>
 
 	{#if images.length > 0}
@@ -157,6 +145,20 @@
 			<p>Upload sequential frames to create your scanimation</p>
 		</div>
 	{/if}
+
+	<section class="controls bottom">
+		<div class="slider-control">
+			<div class="slider-header">
+				<span class="slider-label">Strip width</span>
+				<span class="slider-value">{column_size}px</span>
+			</div>
+			<input type="range" bind:value={column_size} min="1" max="10" class="styled-range" />
+			<div class="slider-ticks">
+				<span>1</span>
+				<span>10</span>
+			</div>
+		</div>
+	</section>
 
 	<footer>
 		<span>Move cursor over image to animate</span>
@@ -233,6 +235,11 @@
 
 	.controls.has-images {
 		margin-bottom: 2rem;
+	}
+
+	.controls.bottom {
+		margin-top: 3rem;
+		margin-bottom: 0;
 	}
 
 	.file-drop {
